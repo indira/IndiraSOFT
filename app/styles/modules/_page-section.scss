@@ -23,14 +23,14 @@
   }
 
   &--profile {
-    background: url(http://localhost:3000/images/indira.png) top center no-repeat;
+    background: url(../images/indira.png) top center no-repeat;
     width: 100%;
     height: 400px;
     background-position: center bottom 0px right 0px;
     background-size: cover;
     @mixin atSmall {
       height: 550px;
-      background: url(http://localhost:3000/images/indira.png) top center no-repeat;
+      background: url(../images/indira.png) top center no-repeat;
       background-position: bottom 0px;
     }
   }

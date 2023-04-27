@@ -2,6 +2,12 @@ import React, { useEffect } from "react"
 import { Link } from "react-router-dom"
 
 function HeaderLoggedIn(props) {
+  function handleLogout() {
+    props.setLoggedIn(false)
+    localStorage.removeItem("IndiraSOFTToken")
+    localStorage.removeItem("IndiraSOFTUsername")
+    localStorage.removeItem("IndiraSOFTAvatar")
+  }
   return (
     <div className="flex-row my-3 my-md-0">
       <Link href="#" className="text-white mr-2 header-search-icon">
@@ -12,12 +18,12 @@ function HeaderLoggedIn(props) {
         <span className="chat-count-badge text-white"> </span>
       </span>
       <a href="#" className="mr-2">
-        <img className="header-avatar-small" src="https://gravatar.com/avatar/b9408a09298632b5151200f3449434ef?s=128" />
+        <img className="header-avatar-small" src={localStorage.getItem("IndiraSOFTAvatar")} />
       </a>
-      <a className="btn btn-sm btn-success mr-2" href="/create-post">
+      <Link className="btn btn-sm btn-success mr-2" to="/create-post">
         Create Post
-      </a>
-      <button onClick={() => props.setLoggedIn(false)} className="btn btn-sm btn-secondary">
+      </Link>
+      <button onClick={handleLogout} className="btn btn-sm btn-secondary">
         Sign Out
       </button>
     </div>

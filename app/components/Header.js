@@ -2,8 +2,7 @@ import React, { useState } from "react"
 import HeaderLoggedOut from "./HeaderLoggedOut"
 import HeaderLoggedIn from "./HeaderLoggedIn"
 
-function Header() {
-  const [loggedIn, setLoggedIn] = useState()
+function Header(props) {
   return (
     <header className="bg-dark">
       <div className="container d-flex flex-column flex-md-row align-items-center p-4">
@@ -12,7 +11,7 @@ function Header() {
             IndiraSOFT
           </a>
         </h4>
-        {loggedIn ? <HeaderLoggedIn setLoggedIn={setLoggedIn} /> : <HeaderLoggedOut setLoggedIn={setLoggedIn} />}
+        {props.loggedIn ? <HeaderLoggedIn setLoggedIn={props.setLoggedIn} /> : <HeaderLoggedOut setLoggedIn={props.setLoggedIn} />}
       </div>
     </header>
   )
