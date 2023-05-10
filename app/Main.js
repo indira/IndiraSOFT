@@ -1,8 +1,12 @@
-import React, { useState } from "react"
+import React, { useState, useReducer, useContext, useEffect } from "react"
 import ReactDOM from "react-dom/client"
+import { useImmerReducer } from "use-immer"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Axios from "axios"
 Axios.defaults.baseURL = "http://localhost:8080"
+
+import StateContext from "./StateContext"
+import DispatchContext from "./DispatchContext"
 
 //Calling the stylesheet
 import "./styles/main.css"
@@ -19,30 +23,62 @@ import ViewSinglePost from "./components/ViewSinglePost"
 import FlashMessages from "./components/FlashMessages"
 
 function Main() {
-  const [loggedIn, setLoggedIn] = useState(Boolean(localStorage.getItem("IndiraSOFTToken")))
-  const [flashMessages, setFlashMessages] = useState([])
-
-  function addFlashMessage(msg) {
-    setFlashMessages(prev => prev.concat(msg))
+  const initialState = {
+    loggedIn: Boolean(localStorage.getItem("IndiraSOFTToken")),
+    flashMessages: [],
+    user: {
+      token: localStorage.getItem("IndiraSOFTToken"),
+      username: localStorage.getItem("IndiraSOFTUsername"),
+      avatar: localStorage.getItem("IndiraSOFTAvatar")
+    }
   }
+  function ourReducer(draft, action) {
+    switch (action.type) {
+      case "login":
+        draft.loggedIn = true
+        draft.user = action.data
+        return
+      case "logout":
+        draft.loggedIn = false
+        return
+      case "flashMessage":
+        draft.flashMessages.push(action.value)
+    }
+  }
+  const [state, dispatch] = useImmerReducer(ourReducer, initialState)
+  //When user is loggedin save the data in the browser and when loggedOut remove it from the browser
+  useEffect(() => {
+    if (state.loggedIn) {
+      localStorage.setItem("IndiraSOFTToken", state.user.token)
+      localStorage.setItem("IndiraSOFTUsername", state.user.username)
+      localStorage.setItem("IndiraSOFTAvatar", state.user.avatar)
+    } else {
+      localStorage.removeItem("IndiraSOFTToken")
+      localStorage.removeItem("IndiraSOFTUsername")
+      localStorage.removeItem("IndiraSOFTAvatar")
+    }
+  }, state.loggedIn)
 
   return (
-    <BrowserRouter>
-      <FlashMessages messages={flashMessages} />
-      <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
-      <Routes>
-        <Route path="/" element={loggedIn ? <Home /> : <HomeGuest />} />
-        <Route path="/post/:id" element={<ViewSinglePost />} />
-        <Route path="/about-us" element={<About />} />
-        <Route path="/create-post" element={<CreatePost addFlashMessage={addFlashMessage} />} />
-        <Route path="/terms" element={<Terms />} />
-        <Route path="/registerhome" element={loggedIn ? <Home /> : <RegisterHome />} />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+    <StateContext.Provider value={state}>
+      <DispatchContext.Provider value={dispatch}>
+        <BrowserRouter>
+          <FlashMessages messages={state.flashMessages} />
+          <Header />
+          <Routes>
+            <Route path="/" element={state.loggedIn ? <Home /> : <HomeGuest />} />
+            <Route path="/post/:id" element={<ViewSinglePost />} />
+            <Route path="/about-us" element={<About />} />
+            <Route path="/create-post" element={<CreatePost />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/registerhome" element={state.loggedIn ? <Home /> : <RegisterHome />} />
+          </Routes>
+          <Footer />
+        </BrowserRouter>
+      </DispatchContext.Provider>
+    </StateContext.Provider>
   )
 }
-
 const root = ReactDOM.createRoot(document.querySelector("#app"))
 root.render(<Main />)
 
