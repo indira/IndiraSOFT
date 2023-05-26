@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import Page from "./Page.js"
+import Page from "./Page"
 import Axios from "axios"
 
 function RegisterHome() {
@@ -10,10 +10,10 @@ function RegisterHome() {
   async function handleSubmit(e) {
     e.preventDefault()
     try {
-      await Axios.post("/register", { username, email, password })
+      await Axios.post("http://localhost:8080/register", { username, email, password })
       console.log("User was successfully created.")
     } catch (e) {
-      console.log(e.response.data)
+      console.log("There was an error")
     }
   }
   return (

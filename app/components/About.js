@@ -1,11 +1,7 @@
 import React, { useEffect } from "react"
 import Page from "./Page"
-function About() {
-  useEffect(() => {
-    document.title = "About Us | IndiraSOFT"
-    window.scrollTo(0, 0)
-  }, [])
 
+function About() {
   return (
     <Page title="About Us">
       <div className="generic-content-container">
@@ -17,4 +13,5 @@ function About() {
     </Page>
   )
 }
+
 export default About

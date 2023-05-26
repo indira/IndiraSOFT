@@ -18,9 +18,8 @@ module.exports = {
     static: {
       directory: path.join(__dirname, "app")
     },
-    liveReload: false,
     hot: true,
-    //Setting the server side routing for the actual path to work
+    liveReload: false,
     historyApiFallback: { index: "index.html" }
   },
   module: {

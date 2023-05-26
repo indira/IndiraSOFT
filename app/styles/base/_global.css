@@ -21,7 +21,7 @@ a {
 }
 a:hover {
   text-decoration: none;
-  color: #fff;
+  color: #28a745;
 }
 .container--narrow {
   max-width: 732px;

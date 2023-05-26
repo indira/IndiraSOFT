@@ -6,7 +6,6 @@ function Page(props) {
     document.title = `${props.title} | IndiraSOFT`
     window.scrollTo(0, 0)
   }, [])
-
   return (
     <Container wide={props.wide} home={props.home}>
       {props.children}

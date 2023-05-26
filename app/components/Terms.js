@@ -1,5 +1,6 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Page from "./Page"
+
 function Terms() {
   return (
     <Page title="Terms and Conditions">
@@ -12,4 +13,5 @@ function Terms() {
     </Page>
   )
 }
+
 export default Terms
