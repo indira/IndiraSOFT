@@ -1,19 +1,18 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useContext } from "react"
 import Axios from "axios"
+import DispatchContext from "../DispatchContext"
+
 function HeaderLoggedOut(props) {
+  const appDispatch = useContext(DispatchContext)
   const [username, setUsername] = useState()
   const [password, setPassword] = useState()
 
   async function handleSubmit(e) {
     e.preventDefault()
     try {
-      const response = await Axios.post("http://localhost:8080/login", { username, password })
+      const response = await Axios.post("/login", { username, password })
       if (response.data) {
-        localStorage.setItem("IndiraSOFTToken", response.data.token)
-        localStorage.setItem("IndiraSOFTUsername", response.data.username)
-        localStorage.setItem("IndiraSOFTAvatar", response.data.avatar)
-
-        props.setLoggedIn(true)
+        appDispatch({ type: "login", data: response.data })
       } else {
         console.log("Incorrect username and password.")
       }
