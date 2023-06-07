@@ -1,4 +1,6 @@
+import { createRoot } from "react-dom/client"
 import React, { useState, useReducer, useEffect } from "react"
+
 import ReactDOM from "react-dom/client"
 import { useImmerReducer } from "use-immer"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
@@ -22,6 +24,7 @@ import CreatePost from "./components/CreatePost"
 import ViewSinglePost from "./components/ViewSinglePost"
 import FlashMessages from "./components/FlashMessages"
 import RegisterHome from "./components/RegisterHome"
+import Profile from "./components/Profile"
 
 function Main() {
   const initialState = {
@@ -73,6 +76,7 @@ function Main() {
             <Route path="/" element={state.loggedIn ? <Home /> : <HomeGuest />} />
             <Route path="/post/:id" element={<ViewSinglePost />} />
             <Route path="/create-post" element={<CreatePost />} />
+            <Route path="/profile/:username/*" element={<Profile />} />
             <Route path="/about-us" element={<About />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/registerhome" element={state.loggedIn ? <Home /> : <RegisterHome />} />
@@ -84,7 +88,7 @@ function Main() {
   )
 }
 
-const root = ReactDOM.createRoot(document.querySelector("#app"))
+const root = createRoot(document.querySelector("#app"))
 root.render(<Main />)
 
 if (module.hot) {
