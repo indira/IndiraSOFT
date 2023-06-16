@@ -33,26 +33,28 @@ function Profile() {
 
   return (
     <Page title="Profile Screen">
-      <h2>
-        <img className="header-avatar-small" src={profileData.profileAvatar} />
-        {profileData.profileUsername}
-        <button className="btn btn-primary btn-sm ml-2">
-          Follow <i className="fas fa-user-plus"></i>
-        </button>
-      </h2>
+      <div className="generic-content-container mt-5 mb-5 ml-3 mr-3">
+        <h2>
+          <img className="header-avatar-small" src={profileData.profileAvatar} />
+          {profileData.profileUsername}
+          <button className="btn btn-primary btn-sm ml-2">
+            Follow <i className="fas fa-user-plus"></i>
+          </button>
+        </h2>
 
-      <div className="profile-nav nav nav-tabs pt-2 mb-4">
-        <Link to="#" className="active nav-item nav-link">
-          Posts: {profileData.counts.postCount}
-        </Link>
-        <Link to="#" className="nav-item nav-link">
-          Followers: {profileData.counts.followerCount}
-        </Link>
-        <Link to="#" className="nav-item nav-link">
-          Following: {profileData.counts.followingCount}
-        </Link>
+        <div className="profile-nav nav nav-tabs pt-2 mb-4">
+          <Link to="#" className="active nav-item nav-link">
+            Posts: {profileData.counts.postCount}
+          </Link>
+          <Link to="#" className="nav-item nav-link">
+            Followers: {profileData.counts.followerCount}
+          </Link>
+          <Link to="#" className="nav-item nav-link">
+            Following: {profileData.counts.followingCount}
+          </Link>
+        </div>
+        <ProfilePosts />
       </div>
-      <ProfilePosts />
     </Page>
   )
 }

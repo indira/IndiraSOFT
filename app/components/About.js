@@ -4,11 +4,10 @@ import Page from "./Page"
 function About() {
   return (
     <Page title="About Us">
-      <div className="generic-content-container">
-        <h2>About Us</h2>
-        <p className="lead text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis dolorum labore quisquam vel id dicta fuga! Ducimus, quo. Dolore commodi aliquid error veritatis consequuntur, excepturi cumque fuga eum incidunt doloremque?</p>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At qui enim rem totam voluptatum. Aut saepe temporibus, facilis ex a iste expedita minima dolorum dicta doloribus libero aliquid, quae maxime? Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat suscipit beatae eum, est soluta ducimus ratione et impedit sapiente, nihil, atque dignissimos adipisci? Totam atque officia quis voluptates sed veniam?</p>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita voluptates quisquam possimus tenetur, dicta enim rerum quis, quaerat id nobis provident quo dolorum sapiente temporibus facere non repellendus consequatur cupiditate!</p>
+      <div className="generic-content-container mt-5 mb-5 ml-3 mr-3">
+        <h2>About Me</h2>
+        <p>Hi, my name is Indira Pandey. I have over 5 years of experience in the software and web development field.</p>
+        <p className="lead text-muted">After being a stay at home mom with my baby boy for five years I now want to go back to work which I enjoy a lot. I left my part time job as a web master for Canadian Association in September last year. Since then I have been taking courses in the Web Development field and working as a Freelancer. Please visit my Portfolio page for more details.</p>
       </div>
     </Page>
   )

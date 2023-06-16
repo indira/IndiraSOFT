@@ -8,14 +8,14 @@ function HomeGuest() {
       <div className="generic-content-container">
         <div className="border-bottom row align-items-center bg-white">
           <div className="col-lg-7 bg-white  py-3 py-md-5 section-title section-title--black">
-            <h1>Remember Writing?</h1>
-            <h3 className="headline headline--centered  headline--small headline--narrow headline--light ">Are you sick of short tweets and impersonal &ldquo;shared&rdquo; posts that are reminiscent of the late 90&rsquo;s email forwards? We believe getting back to actually writing is the key to enjoying the internet again.</h3>
-            <div className="col-md-auto">
-              <button type="button" className="btn btn-lg btn-outline-dark mx-1">
+            <h1>Hello, I'm Indira Pandey.</h1>
+            <h3 className="headline headline--centered  headline--small headline--narrow headline--light ">I'm a full-stack web developer based in beautiful city of Vancouver Canada.</h3>
+            <div className="col-md-auto btn--martop">
+              <button type="button" className="btn btn-lg btn-outline-dark mx-1 btn--marbot">
                 <Link to="/registerhome">Register Here</Link>
               </button>
-              <button type="button" className="btn btn-lg btn-outline-dark mx-1">
-                <Link to="/about-us">About Us</Link>
+              <button type="button" className="btn btn-lg btn-outline-dark mx-1 btn--marbot">
+                <Link to="/about-us">About Me</Link>
               </button>
             </div>
           </div>

@@ -21,8 +21,8 @@ function RegisterHome() {
       <div className="generic-content-container">
         <div className="row ">
           <div className="col-lg-7  section-title section-title--black">
-            <h1>Remember Writing?</h1>
-            <p className="lead text-muted">Are you sick of short tweets and impersonal &ldquo;shared&rdquo; posts that are reminiscent of the late 90&rsquo;s email forwards? We believe getting back to actually writing is the key to enjoying the internet again.</p>
+            <h1>Register to IndiraSOFT.</h1>
+            <p className="lead text-muted">Please register to my site to be the member of the site.</p>
           </div>
           <div className="col-lg-5">
             <form onSubmit={handleSubmit}>
@@ -44,7 +44,7 @@ function RegisterHome() {
                 </label>
                 <input onChange={e => setPassword(e.target.value)} id="password-register" name="password" className="form-control" type="password" placeholder="Create a password" />
               </div>
-              <button type="submit" className="py-3 mt-4 btn btn-lg btn-outline-dark btn-block">
+              <button type="submit" className="py-3 mt-4 btn btn-lg btn-outline-dark btn-block btn--marbot">
                 Sign up for IndiraSOFT
               </button>
             </form>
