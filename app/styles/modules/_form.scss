@@ -1,33 +1,27 @@
-.form-control-title {
-  font-size: 2rem;
-  font-weight: 500;
-}
-
 .input-dark {
   background-color: #444;
   border-color: transparent;
   color: #ffffff;
+  &:focus {
+    color: #ffffff;
+    background-color: #555;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  &::-webkit-input-placeholder {
+    color: #888;
+  }
+  &::-moz-placeholder {
+    color: #888;
+  }
+  &:-ms-input-placeholder {
+    color: #888;
+  }
+  &:-moz-placeholder {
+    color: #888;
+  }
 }
-.input-dark:focus {
-  color: #ffffff;
-  background-color: #555;
-  border-color: #80bdff;
-  outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-}
-.input-dark::-webkit-input-placeholder {
-  color: #888;
-}
-.input-dark::-moz-placeholder {
-  color: #888;
-}
-.input-dark:-ms-input-placeholder {
-  color: #888;
-}
-.input-dark:-moz-placeholder {
-  color: #888;
-}
-
 .form-group {
   position: relative;
 }

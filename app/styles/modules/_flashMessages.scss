@@ -11,10 +11,9 @@
   animation: floatingAlert ease-in 5s forwards;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
-}
-
-.floating-alerts .floating-alert:last-of-type {
-  display: block;
+  &.floating-alert:last-of-type {
+    display: block;
+  }
 }
 
 @keyframes floatingAlert {

@@ -2,13 +2,13 @@
 .dots-loading {
   margin: 0 auto;
   text-align: center;
+  &::before {
+    content: " ";
+  }
+  &::after {
+    content: " ";
+  }
 }
-
-.dots-loading::before,
-.dots-loading::after {
-  content: " ";
-}
-
 .dots-loading div,
 .dots-loading::before,
 .dots-loading::after {

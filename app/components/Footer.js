@@ -13,8 +13,8 @@ function Footer() {
           About Me
         </Link>{" "}
         |{" "}
-        <Link className="mx-1" to="/terms">
-          Terms
+        <Link className="mx-1" to="/portfolio">
+          Portfolio
         </Link>
       </p>
       <p className="m-0">

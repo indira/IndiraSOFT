@@ -19,7 +19,7 @@ import HomeGuest from "./components/HomeGuest"
 import Home from "./components/Home"
 import Footer from "./components/Footer"
 import About from "./components/About"
-import Terms from "./components/Terms"
+import Portfolio from "./components/Portfolio"
 import CreatePost from "./components/CreatePost"
 import ViewSinglePost from "./components/ViewSinglePost"
 import FlashMessages from "./components/FlashMessages"
@@ -80,7 +80,7 @@ function Main() {
             <Route path="/post/:id/edit" element={<EditPost />} />
             <Route path="/profile/:username/*" element={<Profile />} />
             <Route path="/about-us" element={<About />} />
-            <Route path="/terms" element={<Terms />} />
+            <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/registerhome" element={state.loggedIn ? <Home /> : <RegisterHome />} />
           </Routes>
           <Footer />

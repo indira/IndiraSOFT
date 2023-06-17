@@ -6,7 +6,7 @@ function Home() {
   const appState = useContext(StateContext)
   return (
     <Page title="Your Feed">
-      <div className="generic-content-container mt-5 mb-5">
+      <div className="generic-content-container mt-3 mb-3">
         <h2 className="text-center">
           Hello <strong>{appState.user.username}</strong>, your feed is empty.
         </h2>
