@@ -13,7 +13,7 @@ function ProfilePosts(props) {
     async function fetchPosts() {
       try {
         const response = await Axios.get(`/profile/${username}/posts`, { cancelToken: ourRequest.token })
-        console.log(response.data)
+        //console.log(response.data)
         setPosts(response.data)
         setIsLoading(false)
       } catch (e) {

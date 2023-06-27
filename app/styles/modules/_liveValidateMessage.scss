@@ -1,0 +1,31 @@
+.liveValidateMessage {
+  top: -4px;
+  position: absolute;
+  z-index: 1;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  &--visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  &-enter {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  &-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 0.33s opacity ease-in-out, 0.33s transform ease-in-out;
+  }
+  &-exit {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  &-exit-active {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: 0.33s opacity ease-in-out, 0.33s transform ease-in-out;
+  }
+}

@@ -6,7 +6,7 @@ function HomeGuest() {
   return (
     <Page title="Welcome!" home={true} wide={true}>
       <div className="generic-content-container">
-        <div className="border-bottom row align-items-center bg-white">
+        <div className="row align-items-center bg-white">
           <div className="col-lg-7 bg-white  py-3 py-md-5 section-title section-title--black">
             <h1>Hello, I'm Indira Pandey.</h1>
             <h3 className="headline headline--centered  headline--small headline--narrow headline--light ">I'm a full-stack developer based on beautiful city of Vancouver Canada.</h3>
