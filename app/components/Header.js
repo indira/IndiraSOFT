@@ -8,7 +8,7 @@ function Header(props) {
   const appState = useContext(StateContext)
 
   return (
-    <header className="bg-dark">
+    <header className="header-bar bg-dark">
       <div className="container d-flex flex-column flex-md-row align-items-center p-4">
         <h4 className="my-10 mr-md-auto ">
           <Link to="/" className="header__logo ">
